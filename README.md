@@ -82,7 +82,7 @@ The "muscle" of the infrastructure. It manages the lifecycle of the web servers.
 
 *   **Automation**: Uses `User Data` to automatically install Apache and deploy the "Hello World" landing page.
 
-*   **Visual Proof**: ![ASG](screenshots/ASG.png)
+*   **Visual on AWS**: ![ASG](screenshots/ASG.png)
 
 ---
 
