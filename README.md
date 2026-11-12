@@ -1,5 +1,6 @@
 # AWS High-Availability Web Cluster with Terraform
-
+> [!NOTE]
+> **This project is archived.** A more complete and more recent Terraform project (ECS Fargate, RDS PostgreSQL, GitHub Actions CI) is available in [aws-terraform-infra](https://github.com/greeg75/aws-terraform-infra).
 
 ![Terraform](https://img.shields.io/badge/IaC-Terraform-purple)
 ![AWS](https://img.shields.io/badge/Cloud-AWS-orange)
