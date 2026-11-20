@@ -18,7 +18,7 @@ Instead of managing individual servers manually, this architecture leverages an 
 
 Below is the visual representation of the infrastructure. It illustrates how traffic flows from the Internet through the Load Balancer to the EC2 instances distributed across multiple Availability Zones.
 
-![Diagram infrastructure HA server web](<screenshots/Diagram high availability server web.png>)
+![Diagram Architecture](screenshots/architecture-diagram.png)
 
 
 ---
