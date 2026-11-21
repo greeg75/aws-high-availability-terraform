@@ -173,6 +173,6 @@ Overall, this project reflects an automation-first mindset focused on reliabilit
 
 Junior Cloud / DevOps Engineer
 
-LinkedIn : https://www.linkedin.com/in/gregoryjacquet/
+LinkedIn: https://www.linkedin.com/in/gregoryjacquet/
 
 This project was designed and implemented as part of a personal initiative to develop hands-on skills in AWS Cloud, Security, Infrastructure Architecture, and Infrastructure as Code (IaC) using Terraform.
