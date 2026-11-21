@@ -29,7 +29,7 @@ Below is the visual representation of the infrastructure. It illustrates how tra
 
 *   **Load Balancing**: Application Load Balancer (ALB) acting as a single entry point, distributing traffic across multiple instances.
 
-*   **Scalability**: Auto Scaling Group (ASG) configured to maintain a desired capacity of 2 instances, with self-healing capabilities.
+*   **Scalability & Self-Healing**: Auto Scaling Group maintaining a desired capacity of 2 instances (one per Availability Zone), with capacity bounds of 1 to 3 and automatic replacement of failed instances.
 
 *   **Security**: 
 
@@ -47,7 +47,7 @@ Below is the visual representation of the infrastructure. It illustrates how tra
 ├── main.tf                 # Root module calling sub-modules
 ├── variables.tf            
 ├── outputs.tf              # Root outputs (Load Balancer URL)
-├── terraform.tfvars        # Environment configuration
+├── terraform.tfvars        # Environment configuration (to create locally, not versioned)
 ├── modules/
 │   ├── vpc/                # Networking & IGW 
 │   ├── alb/                # Load Balancer & Security Groups
@@ -109,13 +109,13 @@ terraform destroy
 
 The successful deployment of this project resulted in several key infrastructure improvements:
 
-*   **Zero-Downtime Resilience**: By implementing a Multi-AZ architecture, the application remains accessible even if one AWS Availability Zone (data center) undergoes an outage.
+*   **Multi-AZ Resilience**: By implementing a Multi-AZ architecture, the application remains accessible even if one AWS Availability Zone (data center) undergoes an outage.
 
 *   **Rapid Provisioning**: The entire infrastructure (Network, Load Balancer, and Auto-Scaling Cluster) is deployed from scratch in less than **5 minutes** using a single command, significantly reducing time-to-market compared to manual setup.
 
 *   **Self-Healing Capabilities**: The Auto Scaling Group was tested to automatically detect and replace "unhealthy" instances, ensuring the desired capacity of 2 servers is maintained without human intervention.
 
-*   **Validated Accessibility**: The project outcome is a fully functional web environment accessible via a unique DNS entry point, demonstrating successful integration of global traffic management.
+*   **Validated Accessibility**: The application is reachable through the load balancer's single DNS name.
 
 *   **Cost & Resource Optimization**: Used `t3.micro` instances and automated cleanup (`terraform destroy`) to demonstrate responsible cloud cost management.
 
@@ -147,7 +147,7 @@ Through this project, I have significantly improved my skills in:
 
 **Documentation-Driven Development**: Effectively using the official Terraform Registry to implement standard cloud patterns.
 
-**Security-by-Design**: Implementing the principle of least privilege through refined Security Group ingress/egress rules.
+**Security-by-Design**: Implementing the principle of least privilege through refined Security Group ingress rules.
 
 ---
 
@@ -159,19 +159,19 @@ In a modern cloud environment, the ability to provision consistent and reproduci
 
 1.  **Standardize** deployments and eliminate configuration drift.
 
-2.  **Scale** infrastructure dynamically based on demand without manual intervention.
+2.  **Scale** horizontally by adjusting the Auto Scaling Group capacity, without changing the rest of the architecture.
 
 3.  **Secure** cloud environments by design through automated and repeatable configurations.
 
-Overall, this project reflects an automation-first mindset focused on reliability, scalability, and operational efficiency in cloud-native environments.
+Overall, this project reflects an automation-first mindset focused on reliability, scalability, and operational efficiency.
 
 ---
 
 ## Author
 
-Grégory JACQUET
+**Grégory Jacquet**
 
-Aspiring Cloud DevOps / Cloud Engineer Security
+Junior Cloud / DevOps Engineer
 
 LinkedIn : https://www.linkedin.com/in/gregoryjacquet/
 
